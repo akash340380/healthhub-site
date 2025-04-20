@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HealthHub - Your Trusted Medicine Partner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="stars"></div>
+  
+  <header class="glass-nav">
+    <div class="logo">💊 HealthHub</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#medicines">Categories</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <img src="dark.png" alt="Dark Mode Toggle" id="themeToggle" class="theme-logo" />
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Trusted Medicines. Delivered Fast.</h1>
+    <p>Your one-stop shop for genuine medicines, personal care & health essentials.</p>
+    <a href="#medicines" class="btn pulse">Explore Products</a>
+  </div>
+</section>
+
+
+  <section class="services fade-in" id="services">
+    <h2>🩺 Our Services</h2>
+    <div class="service-grid">
+      <div class="card glass-card">
+        <h3>🚚 Home Delivery</h3>
+        <p>Fast, contactless delivery of all medicines and healthcare products.</p>
+      </div>
+      <div class="card glass-card">
+        <h3>💬 Free Consultation</h3>
+        <p>Talk to expert pharmacists for guidance on medicine usage and dosage.</p>
+      </div>
+      <div class="card glass-card">
+        <h3>💊 Generic Medicine</h3>
+        <p>Affordable and quality alternatives to branded medications.</p>
+      </div>
+      <div class="card glass-card">
+        <h3>📆 Subscription Plans</h3>
+        <p>Auto-refill monthly meds & chronic care packages delivered on time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="weekly-menu fade-in" id="medicines">
+    <h2>Medicine Categories</h2>
+    <div class="week-nav">
+      <button class="menu-btn" data-menu="monday">Pain Relief</button>
+      <button class="menu-btn" data-menu="tuesday">Diabetes</button>
+      <button class="menu-btn" data-menu="wednesday">Heart Health</button>
+      <button class="menu-btn" data-menu="thursday">Cold & Flu</button>
+      <button class="menu-btn" data-menu="friday">Skin Care</button>
+    </div>
+    <div class="menu-content">
+  <h3 id="menuTitle">Pain Relief Medicines</h3>
+  <p id="menuDetails">Includes paracetamol, ibuprofen, muscle relaxants, and topical gels.</p>
+  <p class="menu-price">Starting at: <span class="price-value">₹20</span></p>
+  
+  <div class="medicine-grid" id="medicineList">
+    <!-- Medicine cards will be injected here -->
+  </div>
+</div>
+
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-text glass-card">
+      <h2>Why Choose HealthHub?</h2>
+      <p>
+        We offer authentic medicines at competitive prices, home delivery in record time, and customer service that truly cares. Your health journey is our responsibility.
+      </p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@healthhub.in</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Location: Mumbai, India</p>
+    <p class="credit">Made with ❤️ | 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  background: linear-gradient(to bottom right, #f8fff4, #d4fbe8);
+  color: #2d3436;
+  overflow-x: hidden;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 60px;
+  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.2px;
+}
+
+/* Typography Enhancements */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+body.dark-mode p {
+  color: #ccc;
+}
+
+/* Layout Fixes */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Star Field Background */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+  animation: starsAnimation 50s linear infinite;
+}
+
+.stars::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><circle cx="10" cy="10" r="1.5" fill="white"/><circle cx="40" cy="30" r="1" fill="white"/><circle cx="60" cy="100" r="1.8" fill="white"/><circle cx="120" cy="60" r="1.2" fill="white"/><circle cx="180" cy="40" r="1.4" fill="white"/><circle cx="100" cy="150" r="1" fill="white"/><circle cx="140" cy="120" r="1.6" fill="white"/><circle cx="10" cy="180" r="1.1" fill="white"/><circle cx="60" cy="170" r="1.3" fill="white"/><circle cx="150" cy="160" r="1" fill="white"/><circle cx="190" cy="190" r="1.4" fill="white"/><circle cx="30" cy="50" r="1" fill="white"/></svg>') repeat;
+  opacity: 0.4;
+  z-index: 2;
+}
+
+@keyframes starsAnimation {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(300px, 300px); }
+}
+
+/* Navigation Bar */
+header.glass-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+header.sticky {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00b894;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #34495e;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00cec9;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #00b894;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1588776814546-4a6683d9816e?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content {
+  background: rgba(255,255,255,0.6);
+  padding: 50px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  color: #00b894;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #636e72;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  background: linear-gradient(to right, #00b894, #00cec9);
+  color: white;
+  padding: 14px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #00cec9, #1abc9c);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 184, 148, 0.5);
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(0, 184, 148, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 184, 148, 0); }
+}
+
+/* Services Section */
+.services {
+  background: #f0fffa;
+  text-align: center;
+}
+
+.services h2 {
+  color: #00b894;
+  margin-bottom: 40px;
+}
+
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card.glass-card {
+  flex: 1 1 250px;
+  max-width: 280px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.card.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Weekly Menu Section */
+.weekly-menu {
+  background: #f8fff4;
+  text-align: center;
+}
+
+.weekly-menu h2 {
+  color: #00b894;
+  margin-bottom: 30px;
+}
+
+.week-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.menu-btn {
+  background: #00b894;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: #00cec9;
+}
+
+.menu-content {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+#menuTitle {
+  font-size: 1.8rem;
+  color: #00b894;
+  margin-bottom: 10px;
+}
+
+#menuDetails {
+  font-size: 1.2rem;
+  color: #636e72;
+  margin-top: 10px;
+}
+
+.menu-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.price-value {
+  color: #e17055;
+}
+
+/* Medicine Grid */
+.medicine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.medicine-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.medicine-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.medicine-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+body.dark-mode .medicine-card p {
+  color: #ccc;
+}
+
+.medicine-card:hover {
+  transform: scale(1.05);
+}
+
+/* Discount Badge */
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ff3e3e;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* About Section */
+.about {
+  background: #eafff3;
+  text-align: center;
+}
+
+.about h2 {
+  color: #00b894;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  max-width: 700px;
+  margin: auto;
+  background: rgba(255,255,255,0.6);
+  padding: 40px;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+/* Footer */
+footer {
+  background: #00b894;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+}
+
+/* === Dark Mode === */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #0d1117, #1b1f23);
+  color: #dfe6e9;
+}
+
+body.dark-mode .glass-card,
+body.dark-mode .hero-content,
+body.dark-mode .about-text,
+body.dark-mode .menu-content {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(15px);
+  color: #dfe6e9;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode header.glass-nav {
+  background: rgba(30, 39, 46, 0.8);
+}
+
+body.dark-mode .nav-links a {
+  color: #dfe6e9;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: #00cec9;
+}
+
+body.dark-mode .btn {
+  background: #00b894;
+  color: white;
+}
+
+body.dark-mode .btn:hover {
+  background: #00cec9;
+}
+
+body.dark-mode .weekly-menu,
+body.dark-mode .services,
+body.dark-mode .about {
+  background: #1b1f23;
+}
+
+body.dark-mode footer {
+  background: #00b894;
+  color: #ffffff;
+}
+
+/* Dark Mode Toggle Image */
+.theme-logo {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 20px;
+}
+
+.theme-logo:hover {
+  transform: scale(1.1);
+}
